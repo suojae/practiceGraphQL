@@ -3,6 +3,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { TodoModule } from './todo/todo.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { AppService } from './app.service';
       autoSchemaFile: true,
       playground: true,
     }),
+    TodoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
